@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="tr">
+<head>
+    <title> Eğitim Merkezi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eğitim Merkezi">
+    <meta name="author" content="Eğitim Merkezi">
+    <title>@ViewBag.Title - Eğitim Merkezi</title>
+   
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+   
+</head>
+<body>
+
+    <!-- This one in here is responsive menu for tablet and mobiles -->
+    <div class="responsive-navigation visible-sm visible-xs">
+        <a href="#" class="menu-toggle-btn">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="responsive_menu">
+            <ul class="main_menu">
+                <li>@Html.ActionLink("Anasayfa", "Index", "Home")</li>
+                <li>@Html.ActionLink("Hakkımızda", "About", "Home")</li>
+                <li>
+                    <a>Kurslar</a>
+                    <ul>
+                        <li><a href="/Home/Courses?CategoryID=1">Kişisel Gelişim Kursları</a></li>
+                        <li><a href="/Home/Courses?CategoryID=2">Sertifika Kursları</a></li>
+                        <li><a href="/Home/Courses?CategoryID=3">Sınavlara Hazırlık Kursları</a></li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+            </ul>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+            </ul>   <!-- /.social-icons -->
+        </div>
+    </div>
+
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 header-left">
+                    <p><i class="fa fa-phone"></i> +4915905132211</p>
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:sabis@sakarya.edu.tr">sabis@sakarya.edu.tr</a></p>
+                </div> <!-- /.header-left -->
+
+                <div class="col-md-4">
+                    <div class="logo">
+                        <a href="index.html" title="Sakarya Üniversitesi" rel="home">
+                            <h3 style="color:lightblue;">SABİS</h3>
+                            <h3 style="color:lightblue;" margin-top;0px;>SAKARYA ÜNİVERSİTESİ</h3>
+                            <img src="/Content/images/logo9.png" alt="Sakarya Üniversitesi" style="width:75%; height:75%;">
+                        </a>
+                    </div> <!-- /.logo -->
+                </div> <!-- /.col-md-4 -->
+
+
+                <div class="col-md-4 header-right">
+                    <ul class="small-links">
+                        @Html.Partial("_LoginPartial")
+                    </ul>
+
+                    <br />
+                    @Html.ActionLink("tr", "Index", new { lang = "tr" })
+                    @Html.ActionLink("en", "Index", new { lang = "en" })
+                    <br />
+
+
+                    <div class="search-form">
+                        <form name="search_form" method="get" action="#" class="search_form">
+                            <input type="text" name="s" placeholder="Sitede arama..." title="Sitede arama..." class="field_search">
+                        </form>
+                    </div>
+                </div> <!-- /.header-right -->
+            </div>
+        </div> <!-- /.container -->
+
+
+        <div class="nav-bar-main" role="navigation">
+            <div class="container">
+                <nav class="main-navigation clearfix visible-md visible-lg" role="navigation">
+                    <ul class="main-menu sf-menu">
+                        <li>@Html.ActionLink("Anasayfa", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Hakkımızda", "About", "Home")</li>
+                        <li>
+                            <a>Kurslar</a>
+                            <ul>
+                                <li><a href="/Home/Courses?CategoryID=1">Kişisel Gelişim Kursları</a></li>
+                                <li><a href="/Home/Courses?CategoryID=2">Sertifika Kursları</a></li>
+                                <li><a href="/Home/Courses?CategoryID=3">Sınavlara Hazırlık Kursları</a></li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+                    </ul>
+
+                    <ul class="social-icons pull-right">
+                        <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="RSS"><i class="fa fa-rss"></i></a></li>
+                    </ul> <!-- /.social-icons -->
+                </nav> <!-- /.main-navigation -->
+            </div> <!-- /.container -->
+        </div> <!-- /.nav-bar-main -->
+
+    </header> <!-- /.site-header -->
+
+
+    <div class="container">
+        @RenderBody()
+    </div>
+  
+    <!-- begin The Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="bottom-footer">  
+                <div class="row">
+                    <div class="col-md-4" style="background-color:#CC9999">  @*iletişim için col-md-4*@
+                        <p class="small-text" style="color:brown">&copy;@DateTime.Now.Year. <a href="http://sakarya.edu.tr" style="color:crimson"> Sakarya Üniversitesi</a></p>
+                        </div>
+
+                    <div class="col-md-4">  @*menüler için col-md-4*@
+                            <ul class="footer-nav">
+                                <li>@Html.ActionLink("Anasayfa", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Hakkımızda", "About", "Home")</li>
+                                <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+                            </ul>
+                        </div>
+                    <div class="col-md-4">  @*sosyal medya araçları için col-md-4*@
+                        <ul class="social-icons pull-right" style="padding:0;">
+                            <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="RSS"><i class="fa fa-rss"></i></a></li>
+                        </ul> <!-- /.social-icons -->
+                    </div>
+                 </div
+            </div> 
+        </div> 
+    </footer> <!-- /.site-footer -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstap")
+</body>
+</html>

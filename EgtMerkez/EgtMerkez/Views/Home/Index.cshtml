@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Sakarya Üniversitesi";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">              <!--Slider-->
+            <div class="main-slideshow">
+                <div class="flexslider">
+                    <ul class="slides"></ul>
+                </div>
+            </div>
+        </div>                              <!--Slider-->
+
+        <div class="col-md-4">              <!--Bilgi İstek Formu-->
+            <div class="widget-item">
+                <div class="request-information">
+                    <h4 class="widget-title">BİLGİ İSTEK FORMU</h4>
+                    <div class="request-info clearfix">
+                        <div class="full-row">
+                            <label for="cat2"> <b>Tercih Edilen Eğitimler</b></label>
+                            <div class="input-select">
+                                <select class="form-postform" id="bilgiformu_Kurslar" name="bilgiformu.Kurslar">
+                                    <option value="">-- Seçiniz --</option>
+                                    <option value="Anlayarak Etkili ve Hızlı Okuma">Anlayarak Etkili ve Hızlı Okuma</option>
+                                    <option value="Aşçılık ve Pastacılık">Aşçılık ve Pastacılık</option>
+                                    <option value="C# Programlama">C# Programlama</option>
+                                    <option value="Diksiyon Eğitimi">Diksiyon Eğitimi</option>
+                                    <option value="Fotoğrafçılık">Fotoğrafçılık</option>
+                                    <option value="İngilizce">İngilizce</option>
+                                    <option value="Java Programlama">Java Programlama</option>
+                                    <option value="KPSS">KPSS</option>
+                                    <option value="Latin Dansları">Latin Dansları</option>
+                                    <option value="Rusça">Rusça</option>
+                                    <option value="Veritabanı Yönetimi">Veritabanı Yönetimi</option>
+                                    <option value="Web Programcılığı">Web Programacılığı</option>
+                                    <option value="Web Teknolojileri">Web Teknolojileri</option>
+                                    <option value="YGS-LYS">YGS-LYS</option>
+                                    <option value="Yönetici Asistanlığı">Yönetici Asistanlığı</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="full-row">
+                            <label for="yourname">Ad ve Soyad:</label>
+                            @Html.TextBox("AdSoyad")
+                        </div>
+                        <div class="full-row">
+                            <label for="telephone">Telefon:</label>
+                            @Html.TextBox("Telefon")
+                        </div>
+                        <div class="full-row">
+                            <label for="email-id">E-Posta Adresi:</label>
+                            @Html.TextBox("EPosta")
+                        </div>
+                        <div class="full-row">
+                            <div class="submit_field">
+                                <input class="mainBtn pull-right" type="submit" value="Başvur">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       <!-------------------------------------Bilgi İstek Formu-->
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="widget-main">
+                        <div class="widget-main-title">
+                            <h4 class="widget-title">TANITIM VİDEOSU</h4>
+                        </div>
+                        <div class="widget-inner">
+                            <iframe src="https://www.youtube.com/watch?v=HKrf0QH2xWA"></iframe>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-md-6">
+                        <div class="widget-main">
+                            <div class="widget-main-title">
+                                <h4 class="widget-title">DUYURULAR / HABERLER</h4>
+                            </div>
+                            <div class="widget-inner">
+                                <div class="event-small-list clearfix">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-md-4">
+            <div class="widget-main">
+                <div class="widget-main-title">
+                    <h4 class="widget-title">ÖĞRENCİ GÖRÜŞLERİ</h4>
+                </div>
+                <div class="widget-inner">
+                    <div class="prof-list-item clearfix">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
