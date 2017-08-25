@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EgtMerkezModelStoreContainer" CdmEntityContainer="EgtMerkezEntities">
+    <EntitySetMapping Name="Bilgilendirme">
+      <EntityTypeMapping TypeName="EgtMerkezModel.Bilgilendirme">
+        <MappingFragment StoreEntitySet="Bilgilendirme">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Kurslar" ColumnName="Kurslar" />
+          <ScalarProperty Name="IstekTarihi" ColumnName="IstekTarihi" />
+          <ScalarProperty Name="Cevap" ColumnName="Cevap" />
+          <ScalarProperty Name="CevapTarihi" ColumnName="CevapTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Duyurular">
+      <EntityTypeMapping TypeName="EgtMerkezModel.Duyurular">
+        <MappingFragment StoreEntitySet="Duyurular">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DuyuruBaslik" ColumnName="DuyuruBaslik" />
+          <ScalarProperty Name="Duyuru" ColumnName="Duyuru" />
+          <ScalarProperty Name="DuyuruTarih" ColumnName="DuyuruTarih" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kurs">
+      <EntityTypeMapping TypeName="EgtMerkezModel.Kurs">
+        <MappingFragment StoreEntitySet="Kurs">
+          <ScalarProperty Name="KursID" ColumnName="KursID" />
+          <ScalarProperty Name="KursAd" ColumnName="KursAd" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Sure" ColumnName="Sure" />
+          <ScalarProperty Name="Ucret" ColumnName="Ucret" />
+          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="ToplamSaat" ColumnName="ToplamSaat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KursOgrenci">
+      <EntityTypeMapping TypeName="EgtMerkezModel.KursOgrenci">
+        <MappingFragment StoreEntitySet="KursOgrenci">
+          <ScalarProperty Name="KursOgrenciID" ColumnName="KursOgrenciID" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+          <ScalarProperty Name="Ucret" ColumnName="Ucret" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KursTipi">
+      <EntityTypeMapping TypeName="EgtMerkezModel.KursTipi">
+        <MappingFragment StoreEntitySet="KursTipi">
+          <ScalarProperty Name="KursTipID" ColumnName="KursTipID" />
+          <ScalarProperty Name="KursKategoriAd" ColumnName="KursKategoriAd" />
+          <ScalarProperty Name="Renk" ColumnName="Renk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogrenci">
+      <EntityTypeMapping TypeName="EgtMerkezModel.Ogrenci">
+        <MappingFragment StoreEntitySet="Ogrenci">
+          <ScalarProperty Name="OgrenciID" ColumnName="OgrenciID" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Aktivasyon" ColumnName="Aktivasyon" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OgrenciGorus">
+      <EntityTypeMapping TypeName="EgtMerkezModel.OgrenciGorus">
+        <MappingFragment StoreEntitySet="OgrenciGorus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Gorus" ColumnName="Gorus" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OgretimElemani">
+      <EntityTypeMapping TypeName="EgtMerkezModel.OgretimElemani">
+        <MappingFragment StoreEntitySet="OgretimElemani">
+          <ScalarProperty Name="OgretimElemanID" ColumnName="OgretimElemanID" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Ozgecmis" ColumnName="Ozgecmis" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oneri">
+      <EntityTypeMapping TypeName="EgtMerkezModel.Oneri">
+        <MappingFragment StoreEntitySet="Oneri">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slider">
+      <EntityTypeMapping TypeName="EgtMerkezModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
+          <ScalarProperty Name="SliderText" ColumnName="SliderText" />
+          <ScalarProperty Name="BaslangicTarih" ColumnName="BaslangicTarih" />
+          <ScalarProperty Name="BitisTarih" ColumnName="BitisTarih" />
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Kurs_KursTipi" TypeName="EgtMerkezModel.FK_Kurs_KursTipi" StoreEntitySet="Kurs">
+      <EndProperty Name="KursTipi">
+        <ScalarProperty Name="KursTipID" ColumnName="KursTipID" />
+      </EndProperty>
+      <EndProperty Name="Kurs">
+        <ScalarProperty Name="KursID" ColumnName="KursID" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="KursTipID" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Kurs_OgretimElemani" TypeName="EgtMerkezModel.FK_Kurs_OgretimElemani" StoreEntitySet="Kurs">
+      <EndProperty Name="OgretimElemani">
+        <ScalarProperty Name="OgretimElemanID" ColumnName="OgretimElemanID" />
+      </EndProperty>
+      <EndProperty Name="Kurs">
+        <ScalarProperty Name="KursID" ColumnName="KursID" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="OgretimElemanID" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_KursOgrenci_Kurs" TypeName="EgtMerkezModel.FK_KursOgrenci_Kurs" StoreEntitySet="KursOgrenci">
+      <EndProperty Name="Kurs">
+        <ScalarProperty Name="KursID" ColumnName="KursID" />
+      </EndProperty>
+      <EndProperty Name="KursOgrenci">
+        <ScalarProperty Name="KursOgrenciID" ColumnName="KursOgrenciID" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="KursID" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_KursOgrenci_Ogrenci" TypeName="EgtMerkezModel.FK_KursOgrenci_Ogrenci" StoreEntitySet="KursOgrenci">
+      <EndProperty Name="Ogrenci">
+        <ScalarProperty Name="OgrenciID" ColumnName="OgrenciID" />
+      </EndProperty>
+      <EndProperty Name="KursOgrenci">
+        <ScalarProperty Name="KursOgrenciID" ColumnName="KursOgrenciID" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="OgrenciID" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

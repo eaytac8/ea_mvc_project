@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EgtMerkezModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bilgilendirme">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Eposta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Kurslar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IstekTarihi" Type="DateTime" Precision="3" />
+    <Property Name="Cevap" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CevapTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Duyurular">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DuyuruBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Duyuru" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DuyuruTarih" Type="DateTime" Precision="3" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Kurs">
+    <Key>
+      <PropertyRef Name="KursID" />
+    </Key>
+    <Property Name="KursID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KursAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sure" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Ucret" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+    <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+    <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ToplamSaat" Type="Int32" />
+    <NavigationProperty Name="KursTipi" Relationship="Self.FK_Kurs_KursTipi" FromRole="Kurs" ToRole="KursTipi" />
+    <NavigationProperty Name="OgretimElemani" Relationship="Self.FK_Kurs_OgretimElemani" FromRole="Kurs" ToRole="OgretimElemani" />
+    <NavigationProperty Name="KursOgrenci" Relationship="Self.FK_KursOgrenci_Kurs" FromRole="Kurs" ToRole="KursOgrenci" />
+  </EntityType>
+  <EntityType Name="KursOgrenci">
+    <Key>
+      <PropertyRef Name="KursOgrenciID" />
+    </Key>
+    <Property Name="KursOgrenciID" Type="Int32" Nullable="false" />
+    <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
+    <Property Name="Ucret" Type="Double" />
+    <NavigationProperty Name="Kurs" Relationship="Self.FK_KursOgrenci_Kurs" FromRole="KursOgrenci" ToRole="Kurs" />
+    <NavigationProperty Name="Ogrenci" Relationship="Self.FK_KursOgrenci_Ogrenci" FromRole="KursOgrenci" ToRole="Ogrenci" />
+  </EntityType>
+  <EntityType Name="KursTipi">
+    <Key>
+      <PropertyRef Name="KursTipID" />
+    </Key>
+    <Property Name="KursTipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KursKategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Renk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kurs" Relationship="Self.FK_Kurs_KursTipi" FromRole="KursTipi" ToRole="Kurs" />
+  </EntityType>
+  <EntityType Name="Ogrenci">
+    <Key>
+      <PropertyRef Name="OgrenciID" />
+    </Key>
+    <Property Name="OgrenciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DogumTarihi" Type="DateTime" Precision="3" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Aktivasyon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Onay" Type="Boolean" />
+    <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="KursOgrenci" Relationship="Self.FK_KursOgrenci_Ogrenci" FromRole="Ogrenci" ToRole="KursOgrenci" />
+  </EntityType>
+  <EntityType Name="OgrenciGorus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Gorus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="OgretimElemani">
+    <Key>
+      <PropertyRef Name="OgretimElemanID" />
+    </Key>
+    <Property Name="OgretimElemanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Eposta" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Ozgecmis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Kurs" Relationship="Self.FK_Kurs_OgretimElemani" FromRole="OgretimElemani" ToRole="Kurs" />
+  </EntityType>
+  <EntityType Name="Oneri">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Eposta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SliderFoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="SliderText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BaslangicTarih" Type="DateTime" Precision="3" />
+    <Property Name="BitisTarih" Type="DateTime" Precision="3" />
+    <Property Name="ResimYolu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Kurs_KursTipi">
+    <End Role="KursTipi" Type="Self.KursTipi" Multiplicity="0..1" />
+    <End Role="Kurs" Type="Self.Kurs" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Kurs_OgretimElemani">
+    <End Role="OgretimElemani" Type="Self.OgretimElemani" Multiplicity="0..1" />
+    <End Role="Kurs" Type="Self.Kurs" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_KursOgrenci_Kurs">
+    <End Role="Kurs" Type="Self.Kurs" Multiplicity="0..1" />
+    <End Role="KursOgrenci" Type="Self.KursOgrenci" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_KursOgrenci_Ogrenci">
+    <End Role="Ogrenci" Type="Self.Ogrenci" Multiplicity="0..1" />
+    <End Role="KursOgrenci" Type="Self.KursOgrenci" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="EgtMerkezEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bilgilendirme" EntityType="Self.Bilgilendirme" />
+    <EntitySet Name="Duyurular" EntityType="Self.Duyurular" />
+    <EntitySet Name="Kurs" EntityType="Self.Kurs" />
+    <EntitySet Name="KursOgrenci" EntityType="Self.KursOgrenci" />
+    <EntitySet Name="KursTipi" EntityType="Self.KursTipi" />
+    <EntitySet Name="Ogrenci" EntityType="Self.Ogrenci" />
+    <EntitySet Name="OgrenciGorus" EntityType="Self.OgrenciGorus" />
+    <EntitySet Name="OgretimElemani" EntityType="Self.OgretimElemani" />
+    <EntitySet Name="Oneri" EntityType="Self.Oneri" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" />
+    <AssociationSet Name="FK_Kurs_KursTipi" Association="Self.FK_Kurs_KursTipi">
+      <End Role="KursTipi" EntitySet="KursTipi" />
+      <End Role="Kurs" EntitySet="Kurs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kurs_OgretimElemani" Association="Self.FK_Kurs_OgretimElemani">
+      <End Role="OgretimElemani" EntitySet="OgretimElemani" />
+      <End Role="Kurs" EntitySet="Kurs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursOgrenci_Kurs" Association="Self.FK_KursOgrenci_Kurs">
+      <End Role="Kurs" EntitySet="Kurs" />
+      <End Role="KursOgrenci" EntitySet="KursOgrenci" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursOgrenci_Ogrenci" Association="Self.FK_KursOgrenci_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+      <End Role="KursOgrenci" EntitySet="KursOgrenci" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

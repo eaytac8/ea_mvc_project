@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95ab45564e6040baad2c8660c4afef88" Name="Diagram1">
+        <EntityTypeShape EntityType="EgtMerkezModel.Bilgilendirme" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.Duyurular" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.Kurs" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.KursOgrenci" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.KursTipi" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.Ogrenci" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.OgrenciGorus" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.OgretimElemani" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.Oneri" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgtMerkezModel.Slider" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EgtMerkezModel.FK_Kurs_KursTipi" ManuallyRouted="false" />
+        <AssociationConnector Association="EgtMerkezModel.FK_Kurs_OgretimElemani" ManuallyRouted="false" />
+        <AssociationConnector Association="EgtMerkezModel.FK_KursOgrenci_Kurs" ManuallyRouted="false" />
+        <AssociationConnector Association="EgtMerkezModel.FK_KursOgrenci_Ogrenci" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
